@@ -440,8 +440,12 @@ async def send_ending(
             await message.answer_photo(
                 photo=FSInputFile(image),
                 caption=text,
-                reply_markup=ending_keyboard(),
                 parse_mode="HTML",
+            )
+            await message.answer_photo(
+                photo=FSInputFile("/home/ekaterina/IT_Projects/RomanceClubBot/story/pictures/hamster.jpg"),
+                caption="Данный бот разработан на энтузиазме студентки без чайника и чая",
+                reply_markup=ending_keyboard(),
             )
 
             return
@@ -453,8 +457,11 @@ async def send_ending(
 
     await message.answer(
         text,
-        reply_markup=ending_keyboard(),
         parse_mode="HTML",
+    )
+    await message.answer(
+        "Данный бот разработан на энтузиазме студентки без чайника и чая",
+        reply_markup=ending_keyboard(),
     )
 
 
